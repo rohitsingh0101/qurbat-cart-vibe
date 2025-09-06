@@ -57,6 +57,27 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        luxury: {
+          pink: "hsl(var(--luxury-pink))",
+          "pink-light": "hsl(var(--luxury-pink-light))",
+          maroon: "hsl(var(--elegant-maroon))",
+          beige: "hsl(var(--warm-beige))",
+          gold: "hsl(var(--warm-gold))",
+          sage: "hsl(var(--soft-sage))",
+        },
+      },
+      backgroundImage: {
+        'gradient-hero': 'var(--gradient-hero)',
+        'gradient-luxury': 'var(--gradient-luxury)',
+        'gradient-accent': 'var(--gradient-accent)',
+      },
+      boxShadow: {
+        'elegant': 'var(--shadow-elegant)',
+        'soft': 'var(--shadow-soft)',
+      },
+      fontFamily: {
+        'display': ['var(--font-display)', 'serif'],
+        'body': ['var(--font-body)', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
