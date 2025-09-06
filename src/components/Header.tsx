@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Search, User, ShoppingBag } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -14,28 +15,46 @@ const Header = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-luxury-pink rounded-full flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">Q</span>
               </div>
               <span className="font-display text-2xl font-bold text-luxury-maroon">Qurbat</span>
-            </div>
+            </Link>
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Button variant="nav" className="bg-luxury-gold text-luxury-maroon rounded-full px-4 py-1 text-sm font-medium">
-                NEW
-              </Button>
-              <Button variant="nav">SUITS</Button>
-              <Button variant="nav">KURTA & KURTIS</Button>
-              <Button variant="nav">DRESSES</Button>
-              <Button variant="nav">CO-ORDS SET</Button>
-              <Button variant="nav">COLLECTIONS</Button>
-              <Button variant="nav">BAGS</Button>
-              <Button variant="nav">DUPATTAS</Button>
-              <Button variant="nav" className="bg-luxury-gold text-luxury-maroon rounded-full px-4 py-1 text-sm font-medium">
-                SALE
-              </Button>
+              <Link to="/new">
+                <Button variant="nav" className="bg-luxury-gold text-luxury-maroon rounded-full px-4 py-1 text-sm font-medium">
+                  NEW
+                </Button>
+              </Link>
+              <Link to="/suits">
+                <Button variant="nav">SUITS</Button>
+              </Link>
+              <Link to="/kurta-kurtis">
+                <Button variant="nav">KURTA & KURTIS</Button>
+              </Link>
+              <Link to="/dresses">
+                <Button variant="nav">DRESSES</Button>
+              </Link>
+              <Link to="/co-ords">
+                <Button variant="nav">CO-ORDS SET</Button>
+              </Link>
+              <Link to="/collections">
+                <Button variant="nav">COLLECTIONS</Button>
+              </Link>
+              <Link to="/bags">
+                <Button variant="nav">BAGS</Button>
+              </Link>
+              <Link to="/dupattas">
+                <Button variant="nav">DUPATTAS</Button>
+              </Link>
+              <Link to="/sale">
+                <Button variant="nav" className="bg-luxury-gold text-luxury-maroon rounded-full px-4 py-1 text-sm font-medium">
+                  SALE
+                </Button>
+              </Link>
             </nav>
 
             {/* Actions */}
