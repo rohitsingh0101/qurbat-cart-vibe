@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
 import CartDrawer from "@/components/CartDrawer";
+import SearchDialog from "@/components/SearchDialog";
+import { useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,6 +17,7 @@ import {
 const Header = () => {
   const { user, logout } = useAuth();
   const { toast } = useToast();
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
@@ -80,7 +83,11 @@ const Header = () => {
 
             {/* Actions */}
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="icon">
+              <Button 
+                variant="ghost" 
+                size="icon"
+                onClick={() => setSearchOpen(true)}
+              >
                 <Search className="h-5 w-5" />
               </Button>
               
@@ -118,6 +125,8 @@ const Header = () => {
           </div>
         </div>
       </header>
+      
+      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
     </>
   );
 };
