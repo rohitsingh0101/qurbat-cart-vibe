@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Heart, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useCart } from "@/contexts/CartContext";
 
 interface Product {
   id: number;
@@ -22,6 +23,7 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   const [isLiked, setIsLiked] = useState(false);
   const [isAdding, setIsAdding] = useState(false);
+  const { addItem } = useCart();
   const { toast } = useToast();
 
   const handleAddToCart = async () => {
@@ -29,6 +31,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
     
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 500));
+    
+    // Add item to cart
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      originalPrice: product.originalPrice,
+      image: product.image,
+    });
     
     toast({
       title: "Added to Cart!",
